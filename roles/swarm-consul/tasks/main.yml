@@ -1,0 +1,3 @@
+---
+- name: Create discovery backend
+  command: docker run -d -p 8500:8500 --name=consul progrium/consul -server -bootstrap

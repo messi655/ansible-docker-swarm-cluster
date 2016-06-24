@@ -1,0 +1,7 @@
+---
+- name: Get IP of node
+  set_fact:
+    ip: "{{ ansible_enp0s8['ipv4']['address'] }}"
+
+- name: Connect swarm node to cluster
+  command: docker run -d swarm join --advertise="{{ ip }}":2375 consul://{{ ip_consul }}:8500

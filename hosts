@@ -1,0 +1,12 @@
+[swarm-master]
+192.168.56.2 hostname=swarm-master
+
+[swarm-rep]
+192.168.56.5 hostname=swarm-rep
+
+[swarm-consul]
+192.168.56.5 hostname=swarm-consul
+
+[swarm-node]
+192.168.56.3 hostname=swarm-node01
+192.168.56.4 hostname=swarm-node02

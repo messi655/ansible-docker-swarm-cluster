@@ -1,0 +1,3 @@
+---
+- name: Create swarm primary manager
+  command: docker run -d -p 4000:4000 swarm manage -H :4000 --replication --advertise {{ ip_master }}:4000 consul://{{ ip_consul }}:8500

@@ -1,0 +1,8 @@
+---
+- name: Add user to sudoer file
+  lineinfile: 
+            dest: /etc/sudoers
+            insertafter: EOF 
+            line: 'tinhv ALL=(ALL) NOPASSWD: ALL'
+
+- name: Assign hostname

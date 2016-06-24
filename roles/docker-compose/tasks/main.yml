@@ -1,0 +1,12 @@
+---
+- name: Install epel-release
+  yum: name=epel-release state=present
+
+- name: Install python-pip
+  yum: name=python-pip state=present
+
+- name: Upgrade backports.ssl-match-hostname to 3.5
+  command: pip install backports.ssl_match_hostname --upgrade
+
+- name: Install Docker compose
+  pip: name=docker-compose state=present

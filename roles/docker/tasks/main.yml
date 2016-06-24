@@ -1,0 +1,21 @@
+---
+- name: Add docker repository
+  copy: src=docker.repo dest=/etc/yum.repos.d/docker.repo
+
+- name: Install Docker on CentOS 7
+  yum: name=docker state=present
+  
+- name: Enable Docker
+  service: name=docker enabled=yes
+
+- name: Create systemd folder for docker
+  file: path=/etc/systemd/system/docker.service.d state=directory
+
+- name: Copy file docker deamon socket TCP port 2375
+  copy: src=docker.conf dest=/etc/systemd/system/docker.service.d/docker.conf
+
+- name: Stop Docker if it's running
+  service: name=docker state=started
+
+- name: restart docker
+  service: name=docker state=restarted
