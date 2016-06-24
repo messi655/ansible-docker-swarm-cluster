@@ -1,12 +1,12 @@
 [swarm-master]
-192.168.56.2 hostname=swarm-master
+swarm-master ansible_ssh_host=192.168.56.2
 
 [swarm-rep]
-192.168.56.5 hostname=swarm-rep
+swarm-rep ansible_ssh_host=192.168.56.5 
 
 [swarm-consul]
-192.168.56.5 hostname=swarm-consul
+swarm-consul ansible_ssh_host=192.168.56.5 
 
 [swarm-node]
-192.168.56.3 hostname=swarm-node01
-192.168.56.4 hostname=swarm-node02
+swarm-node01 ansible_ssh_host=192.168.56.3
+swarm-node02 ansible_ssh_host=192.168.56.4 

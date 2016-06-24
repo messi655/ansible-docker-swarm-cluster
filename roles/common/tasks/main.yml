@@ -1,8 +1,9 @@
 ---
+- name: Assign name for cluster
+  template: src=hostname.j2 dest=/etc/hostname
+
 - name: Add user to sudoer file
   lineinfile: 
             dest: /etc/sudoers
             insertafter: EOF 
-            line: 'tinhv ALL=(ALL) NOPASSWD: ALL'
-
-- name: Assign hostname
+            line: '{{ ansible_username }} ALL=(ALL) NOPASSWD: ALL'

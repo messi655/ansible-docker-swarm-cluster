@@ -1,25 +1,30 @@
 ---
+#- hosts: all
+#  sudo: yes
+#  roles:
+#    - { role: docker, tags: ['docker'] }
+
+#- hosts: swarm-consul
+#  sudo: yes
+#  roles:
+#    - { role: swarm-consul, tags: ['swarm-consul'] }
+
+#- hosts: swarm-master
+#  sudo: yes
+#  roles:
+#    - { role: swarm-master, tags: ['swarm-master'] }
+
+#- hosts: swarm-rep
+#  sudo: yes
+#  roles:
+#    - { role: swarm-rep, tags: ['swarm-rep'] }
+
+#- hosts: swarm-node
+#  sudo: yes
+#  roles:
+#   - { role: swarm-node, tags: ['swarm-node'] }
+
 - hosts: all
   sudo: yes
   roles:
-    - { role: docker, tags: ['docker'] }
-
-- hosts: swarm-consul
-  sudo: yes
-  roles:
-    - { role: swarm-consul, tags: ['swarm-consul'] }
-
-- hosts: swarm-master
-  sudo: yes
-  roles:
-    - { role: swarm-master, tags: ['swarm-master'] }
-
-- hosts: swarm-rep
-  sudo: yes
-  roles:
-    - { role: swarm-rep, tags: ['swarm-rep'] }
-
-- hosts: swarm-node
-  sudo: yes
-  roles:
-    - { role: swarm-node, tags: ['swarm-node'] }
+    - { role: common}
